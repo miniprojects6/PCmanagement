@@ -2170,7 +2170,11 @@ content: '';
     Component: Buttons
 -------------------------
 */
-
+.btn-updatenotification{
+	margin: 5px;
+	padding: 5px;
+	
+}
 
 .btn {
     font-weight: 500;

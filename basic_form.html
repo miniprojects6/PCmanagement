@@ -16,6 +16,7 @@
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <!-- Theme style -->
         <link href="css/style.css" rel="stylesheet" type="text/css" />
+          <script src="js/jquery.min.js" type="text/javascript"></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -291,47 +292,63 @@
 
                 <!-- Main content -->
 
+
+
+
+
+
+
+
                 <section class="panel">
                               <header class="panel-heading">
                                  Add Event
                               </header>
                               <div class="panel-body">
-                                  <form class="form-horizontal tasi-form" method="get" action="">
-                                      <div class="form-group">
-                                          <label id="event_name" class="col-sm-2 col-sm-2 control-label">Event heading</label>
-                                          <div class="col-sm-10">
-                                              <input type="text" class="form-control">
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          <label id="event_description" class="col-sm-2 col-sm-2 control-label">Description</label>
-                                          <div class="col-sm-10">
-                                              <input type="text" class="form-control">
-                                              
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          <label class="col-sm-2 col-sm-2 control-label">Date</label>
-                                          <div class="col-sm-10">
-                                              <input id="event_date" type="date" class="form-control round-input">
-                                          </div>
-                                      </div>
-                                      
+                                  <form class="form-horizontal tasi-form" method="POST" action="/Director-free/php/add_event.php">
+
                                   
-                                  <div class="form-group">
-                                          <div class="col-lg-offset-2 col-lg-10">
-                                              <div class="checkbox">
-                                                  <label>
-                                                      <input type="checkbox"> Send notification
-                                                  </label>
-                                                  <a href="#myModal" data-toggle="modal" class="btn btn-xs btn-success">
-                                      					Select Recipients
-                                		 		 </a>
+                                              <div class="form-group">
+                                                  <label  class="col-sm-2 col-sm-2 control-label">Event heading</label>
+                                                  <div class="col-sm-10">
+                                                      <input id="event_name" name="event_name" type="text" class="form-control">
+                                                  </div>
                                               </div>
-                                              <button onclick="addEvent()" type="submit" class="btn btn-default">Submit</button>
+                                              <div class="form-group">
+                                                  <label  class="col-sm-2 col-sm-2 control-label">Description</label>
+                                                  <div class="col-sm-10">
+                                                      <input id="event_description" name="event_description" type="text" class="form-control">
+                                                      
+                                                  </div>
+                                              </div>
+                                              <div class="form-group">
+                                                  <label class="col-sm-2 col-sm-2 control-label">Date</label>
+                                                  <div class="col-sm-10">
+                                                      <input id="event_date" type="date" name="event_date" class="form-control round-input">
+                                                  </div>
+                                              </div>
+                                              
+                                          
+                                          <div class="form-group">
+                                                  <div class="col-lg-offset-2 col-lg-10">
+                                                      <div class="checkbox">
+                                                          <label>
+                                                              <input name="notification_select" type="checkbox"> Send notification
+                                                          </label>
+                                                          <a href="#myModal" data-toggle="modal" class="btn btn-xs btn-success">
+                                              					Select Recipients
+                                        		 		 </a>
+                                                      </div>
+                                                      <button id="event_submit" type="submit" onclick="notification();" class="btn btn-default">Submit</button>
+                                                  </div>
                                           </div>
-                                  </div>
-                                  </form>
+                                          
+
+
+
+
+
+
+
 
                                   <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade ">
                                       <div class="modal-dialog">
@@ -342,7 +359,7 @@
                                               </div>
                                               <div class="modal-body">
 
-                                                  <form role="form">
+                                                  
                                                       <div class="radio">
                                                   			<div class="checkbox">
 				                                                  <div class="radio">
@@ -362,8 +379,8 @@
                                                          
 					                                   <div class="col-lg-10">
 					                                             
-					                                             <select class="form-control m-b-10">
-					                                                  <option>All</option>
+					                                             <select name="select_GPA"  class="form-control m-b-10">
+					                                                  <option> All</option>
 					                                                  <option>9 above</option>
 					                                                  <option>8 above</option>
 					                                                  <option>7 above</option>
@@ -391,7 +408,7 @@
 					                                          </div>
 					                                          
                                                       </div>                                                      
-                                                      <button type="submit" class="btn btn-default">Submit</button>
+                                                      <button type="submit"  class="btn btn-default">Submit</button>
                                                   </form>
                                               </div>
                                           </div>
@@ -399,6 +416,25 @@
                                   </div>
                               </div>
                             </section>
+
+
+                            <form action="php/test.php">
+                                <button type="submit"  class="btn btn-default">Submit</button>
+                            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -409,13 +445,20 @@
             </div>
         </div><!-- ./wrapper -->
         <!-- jQuery 2.0.2 -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        <script src="js/add_Event.js"></script>
-        <script src="js/jquery.min.js" type="text/javascript"></script>
 
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+         <script src="js/jquery.min.js" type="text/javascript"></script>
+       
+
+		<script src="js/add_Event.js"></script>
         <!-- Bootstrap -->
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <!-- Director App -->
         <script src="js/Director/app.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            function notification(){
+                alert("notify");
+            }
+        </script>
     </body>
 </html>

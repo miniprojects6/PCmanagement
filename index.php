@@ -467,62 +467,44 @@
                                                 Notifications
                                             </header>
                                                 <div class="panel-body" id="noti-box" >
+                                                <?php
+                                                include("php/test.php");
 
-                                                    <div class="alert alert-block alert-danger">
-                                                        <button data-dismiss="alert" class="close close-sm" type="button">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
-                                                    </div>
-                                                    <div class="alert alert-success">
-                                                        <button data-dismiss="alert" class="close close-sm" type="button">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                        <strong>Well done!</strong> You successfully read this important alert message.
-                                                    </div>
-                                                    <div class="alert alert-info">
-                                                        <button data-dismiss="alert" class="close close-sm" type="button">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-                                                    </div>
-                                                    <div class="alert alert-warning">
-                                                        <button data-dismiss="alert" class="close close-sm" type="button">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                        <strong>Warning!</strong> Best check yo self, you're not looking too good.
-                                                    </div>
+                                                  ?>
+
+                                                    
+                                                    <?php foreach ($result as $row): 
 
 
-                                                    <div class="alert alert-block alert-danger">
-                                                        <button data-dismiss="alert" class="close close-sm" type="button">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
-                                                    </div>
-                                                    <div class="alert alert-success">
-                                                        <button data-dismiss="alert" class="close close-sm" type="button">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                        <strong>Well done!</strong> You successfully read this important alert message.
-                                                    </div>
-                                                    <div class="alert alert-info">
-                                                        <button data-dismiss="alert" class="close close-sm" type="button">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-                                                    </div>
-                                                    <div class="alert alert-warning">
-                                                        <button data-dismiss="alert" class="close close-sm" type="button">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                        <strong>Warning!</strong> Best check yo self, you're not looking too good.
-                                                    </div>
+                                                     
+                                                    $query  = "SELECT * FROM event_list "; 
+                                                      $result = mysqli_query($conn, $query ) or die(mysqli_error($conn));        
+                                                       
+                                                       
+                                                    // while($row = mysqli_fetch_assoc($result)) {    
+                                                      
+                                                   echo " <div class=\"alert alert-block alert-danger\" style=\"background-color: #FF6;  \" >  ";
+                                                    echo "    <button data-dismiss=\"alert\" class=\"close close-sm\" type=\"button\"> ";
+                                                          echo "  <i class=\"fa fa-times\"></i> ";
+                                                       echo " </button> ";
+                                                        
+                                                            $event = $row['name'];
+                                                            $description= $row['description'];
+                                                            $date= $row['date'];
+                                                         echo $event; echo "<br>";
+                                                          echo $description; echo "<br>";
+                                                           echo $date; echo "<br>";
+                                                    echo "</div>"
 
 
+                                                      
+                                                     // }
+                                                     ?>
+                                                    
+                                                    <?php endforeach; ?>
 
                                                 </div>
-                                                <a class="btn btn-success btn-sm pull-left btn-updatenotification"  href="index.php" " >Update</a>
+                                                <a class="btn btn-success btn-sm pull-left btn-updatenotification" href="index.php" >Update</a>
                                         </section>
 
 
@@ -811,5 +793,6 @@
 
     };
 </script>
+
 </body>
 </html>
