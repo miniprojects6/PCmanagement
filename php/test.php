@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "add_event";
+    $dbname = "miniproject";
 
    
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,16 +14,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
    
 
 
-   $query  = "SELECT * FROM event_list "; 
+   $query  = "SELECT * FROM event_list WHERE recipients_branch='CS'OR recipients_branch='EC'"; 
     $result = mysqli_query($conn, $query ) or die(mysqli_error($conn));
 
-    while($row = mysqli_fetch_assoc($result)) {
-        $event = $row['name'];
-        $description= $row['description'];
-        $date= $row['date'];
-        
-   
-    }
+    
 
 
 

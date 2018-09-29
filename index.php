@@ -1,8 +1,11 @@
+<?php
+        session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Deck | Dashboard</title>
+    <title>MEC PLACEMENT CELL</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="S Meena Padnekar">
     <meta name="keywords" content="Placement Cell, Mec,PC">
@@ -29,6 +32,10 @@
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- Theme style -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- CALANDER -->
+    
+    <link rel="stylesheet" href="css/jquery.e-calendar.css"/>
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
 
 
@@ -130,7 +137,7 @@
         <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">
-                Deck
+                PLACEMENT CELL
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -143,194 +150,26 @@
                 </a>
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
-                        <li class="dropdown messages-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-envelope"></i>
-                                <span class="label label-success">4</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 4 messages</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li><!-- start message -->
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/26115.jpg" class="img-circle" alt="User Image"/>
-                                                </div>
-                                                <h4>
-                                                    Support Team
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                                <small class="pull-right"><i class="fa fa-clock-o"></i> 5 mins</small>
-                                            </a>
-                                        </li><!-- end message -->
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/26115.jpg" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Director Design Team
-
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                                <small class="pull-right"><i class="fa fa-clock-o"></i> 2 hours</small>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Developers
-
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                                <small class="pull-right"><i class="fa fa-clock-o"></i> Today</small>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/26115.jpg" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Sales Department
-
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                                <small class="pull-right"><i class="fa fa-clock-o"></i> Yesterday</small>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Reviewers
-
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                                <small class="pull-right"><i class="fa fa-clock-o"></i> 2 days</small>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">See All Messages</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown tasks-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-tasks"></i>
-                                <span class="label label-danger">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 9 tasks</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Design some buttons
-                                                    <small class="pull-right">20%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-success" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">20% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Create a nice theme
-                                                    <small class="pull-right">40%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-danger" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">40% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Some task I need to do
-                                                    <small class="pull-right">60%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-info" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Make beautiful transitions
-                                                    <small class="pull-right">80%</small>
-                                                </h3>
-                                                <div class="progress progress-striped xs">
-                                                    <div class="progress-bar progress-bar-warning" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">80% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                    </ul>
-                                </li>
-                                <li class="footer">
-                                    <a href="#">View all tasks</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- User Account: style can be found in dropdown.less -->
+                       
+                            
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-user"></i>
-                                <span>Jane Doe <i class="caret"></i></span>
+                               
+                                 <i class="caret"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                 <li class="dropdown-header text-center">Account</li>
 
-                                <li>
-                                    <a href="#">
-                                    <i class="fa fa-clock-o fa-fw pull-right"></i>
-                                        <span class="badge badge-success pull-right">10</span> Updates</a>
-                                    <a href="#">
-                                    <i class="fa fa-envelope-o fa-fw pull-right"></i>
-                                        <span class="badge badge-danger pull-right">5</span> Messages</a>
-                                    <a href="#"><i class="fa fa-magnet fa-fw pull-right"></i>
-                                        <span class="badge badge-info pull-right">3</span> Subscriptions</a>
-                                    <a href="#"><i class="fa fa-question fa-fw pull-right"></i> <span class=
-                                        "badge pull-right">11</span> FAQ</a>
-                                </li>
-
                                 <li class="divider"></li>
 
                                     <li>
-                                        <a href="#">
-                                        <i class="fa fa-user fa-fw pull-right"></i>
-                                            Profile
-                                        </a>
-                                        <a data-toggle="modal" href="#modal-user-settings">
-                                        <i class="fa fa-cog fa-fw pull-right"></i>
-                                            Settings
-                                        </a>
-                                        </li>
+                                        
 
                                         <li class="divider"></li>
 
                                         <li>
-                                            <a href="#"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
+                                            <a href="logout.php"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -345,11 +184,14 @@
                         <section class="sidebar">
                             <!-- Sidebar user panel -->
                             <div class="user-panel">
-                                <div class="pull-left image">
-                                    <img src="img/26115.jpg" class="img-circle" alt="User Image" />
-                                </div>
+                               
                                 <div class="pull-left info">
-                                    <p>NAME</p>
+                                    <p> <?php
+
+                                    
+                                        $var= $_SESSION['pusername'];
+                                        echo $_SESSION['pusername'];
+                                ?></p>
 
                                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                                 </div>
@@ -358,8 +200,8 @@
                             <!-- sidebar menu: : style can be found in sidebar.less -->
                             <ul class="sidebar-menu">
                                 <li class="active">
-                                    <a href="index.html">
-                                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                                    <a href="index.php">
+                                        <i class="fa fa-home"></i> <span>Home</span>
                                     </a>
                                 </li>
                                <!--  <li>
@@ -370,15 +212,30 @@
 
                                 <li>
                                     <a href="basic_form.html">
-                                        <i class="fa fa-globe"></i> <span>Forms</span>
+                                        <i class="fa fa-envelope"></i> <span>Notification</span>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="simple.html">
-                                        <i class="fa fa-glass"></i> <span>Student Database</span>
+                                    <a href="simple.php">
+                                        <i class="fa fa-search"></i> <span>Search</span>
                                     </a>
                                 </li>
+                                 <li>
+                            <a href="downloadresume.php">
+                             <i class="fa fa-cloud-download"></i> <span>Download Resume</span>
+                            </a>
+                        </li>
+                                 <li>
+                            <a href="Add.php">
+                             <i class="fa fa-user"></i> <span>Add Members</span>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="Company.php">
+                             <i class="fa fa-folder"></i> <span>Company Registration </span>
+                            </a>
+                        </li>
 
                             </ul>
                         </section>
@@ -399,62 +256,64 @@
                                 <header class="panel-heading">
                                     Calander
                                 </header>
-                                <div class="panel-body">
-				                            <div class="month">      
-													  <ul style="list-style: none;">
-													    <li class="prev"><</li>
-													    <li class="next">></li>
-													    <li style="text-align:center">
-													      March<br>
-													      <span style="font-size:18px">2017\</span>
-													    </li>
-													  </ul>
-											</div>
+                                 <div class="panel-body">
+                                            <div class="month">      
+                                                      <ul style="list-style: none;">
+                                                        <li class="prev"><</li>
+                                                        <li class="next">></li>
+                                                        <li style="text-align:center">
+                                                          May<br>
+                                                          <span style="font-size:18px">2017</span>
+                                                        </li>
+                                                      </ul>
+                                            </div>
 
-													<ul class="weekdays">
-													  <li>Mo</li>
-													  <li>Tu</li>
-													  <li>We</li>
-													  <li>Th</li>
-													  <li>Fr</li>
-													  <li>Sa</li>
-													  <li>Su</li>
-													</ul>
+                                                    <ul class="weekdays">
+                                                      <li>Mo</li>
+                                                      <li>Tu</li>
+                                                      <li>We</li>
+                                                      <li>Th</li>
+                                                      <li>Fr</li>
+                                                      <li>Sa</li>
+                                                      <li>Su</li>
+                                                    </ul>
 
-													<ul class="days">  
-													  <li>1</li>
-													  <li>2</li>
-													  <li>3</li>
-													  <li>4</li>
-													  <li>5</li>
-													  <li>6</li>
-													  <li>7</li>
-													  <li>8</li>
-													  <li>9</li>
-													  <li>10</li>
-													  <li>11</li>
-													  <li>12</li>
-													  <li>13</li>
-													  <li><span class="active">14</span></li>
-													  <li>15</li>
-													  <li>16</li>
-													  <li>17</li>
-													  <li>18</li>
-													  <li>19</li>
-													  <li>20</li>
-													  <li>21</li>
-													  <li>22</li>
-													  <li>23</li>
-													  <li>24</li>
-													  <li>25</li>
-													  <li>26</li>
-													  <li>27</li>
-													  <li>28</li>
-													  <li>29</li>
-													  <li>30</li>
-													  <li>31</li>
-													</ul>
-                                </div>
+                                                    <ul class="days">  
+                                                      <li>1</li>
+                                                      <li><span class="active">2</span></li>
+                                                      <li>3</li>
+                                                      <li>4</li>
+                                                      <li>5</li>
+                                                      <li>6</li>
+                                                      <li>7</li>
+                                                      <li>8</li>
+                                                      <li>9</li>
+                                                      <li>10</li>
+                                                      <li>11</li>
+                                                      <li>12</li>
+                                                      <li>13</li>
+                                                      <li>14</li>
+                                                      <li>15</li>
+                                                      <li>16</li>
+                                                      <li>17</li>
+                                                      <li>18</li>
+                                                      <li>19</li>
+                                                      <li>20</li>
+                                                      <li>21</li>
+                                                      <li>22</li>
+                                                      <li>23</li>
+                                                      <li>24</li>
+                                                      <li>25</li>
+                                                      <li>26</li>
+                                                      <li>27</li>
+                                                      <li>28</li>
+                                                      <li>29</li>
+                                                      <li>30</li>
+                                                      <li>31</li>
+                                                    </ul>
+                                                    </div>
+
+                                                  
                                         </section>
                                         <!--Calander end-->
 
@@ -477,13 +336,13 @@
 
 
                                                      
-                                                    $query  = "SELECT * FROM event_list "; 
-                                                      $result = mysqli_query($conn, $query ) or die(mysqli_error($conn));        
+                                                    //$query  = "SELECT * FROM event_list WHERE recipients_gpa < 8.2"; 
+                                                     // $result = mysqli_query($conn, $query ) or die(mysqli_error($conn));        
                                                        
                                                        
                                                     // while($row = mysqli_fetch_assoc($result)) {    
                                                       
-                                                   echo " <div class=\"alert alert-block alert-danger\" style=\"background-color: #FF6;  \" >  ";
+                                                   echo " <div class=\"alert alert-block alert-danger\" style=\"background-color: #4bcdb6;  \" >  ";
                                                     echo "    <button data-dismiss=\"alert\" class=\"close close-sm\" type=\"button\"> ";
                                                           echo "  <i class=\"fa fa-times\"></i> ";
                                                        echo " </button> ";
@@ -525,138 +384,12 @@
                     </div>
                     <div class="row">
                         
-                        <div class="col-md-12">
-                          <section class="panel tasks-widget">
-                              <header class="panel-heading">
-                                  Todo list
-                            </header>
-                            <div class="panel-body">
-
-                              <div class="task-content">
-
-                                  <ul class="task-list">
-                                      <li>
-                                          <div class="task-checkbox">
-                                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                              <input type="checkbox" class="flat-grey list-child"/>
-                                              <!-- <input type="checkbox" class="square-grey"/> -->
-                                          </div>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">A New Task To Do</span>
-                                              <span class="label label-success">2 Days</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                              </div>
-                                          </div>
-                                      </li>
-                                      <li>
-                                          <div class="task-checkbox">
-                                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                              <input type="checkbox" class="flat-grey"/>
-                                          </div>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">A New Task To Do</span>
-                                              <span class="label label-danger">Done</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                              </div>
-                                          </div>
-                                      </li>
-                                      <li>
-                                          <div class="task-checkbox">
-                                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                              <input type="checkbox" class="flat-grey"/>
-                                          </div>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">A New Task To Do</span>
-                                              <span class="label label-warning">Company</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                              </div>
-                                          </div>
-                                      </li>
-                                      <li>
-                                          <div class="task-checkbox">
-                                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                              <input type="checkbox" class="flat-grey"/>
-                                          </div>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">A New Task To Do</span>
-                                              <span class="label label-primary">3 Days</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                              </div>
-                                          </div>
-                                      </li>
-                                      <li>
-                                          <div class="task-checkbox">
-                                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                              <input type="checkbox" class="flat-grey"/>
-                                          </div>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">A New Task To Do</span>
-                                              <span class="label label-inverse">Now</span>
-                                              <div class="pull-right">
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                              </div>
-                                          </div>
-                                      </li>
-                                      <li>
-                                          <div class="task-checkbox">
-                                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                              <input type="checkbox" class="flat-grey"/>
-                                          </div>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">A New Task To Do</span>
-                                              <span class="label label-success">2 Days</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                              </div>
-                                          </div>
-                                      </li>
-                                      <li>
-                                          <div class="task-checkbox">
-                                              <!-- <input type="checkbox" class="list-child" value=""  /> -->
-                                              <input type="checkbox" class="flat-grey"/>
-                                          </div>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">A New Task To Do</span>
-                                              <span class="label label-danger">Now</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-check"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button>
-                                                  <button class="btn btn-default btn-xs"><i class="fa fa-times"></i></button>
-                                              </div>
-                                          </div>
-                                      </li>
-
-                                  </ul>
-                              </div>
-
-                              <div class=" add-task-row">
-                                  <a class="btn btn-success btn-sm pull-left" href="#">Add New Tasks</a>
-                                  <a class="btn btn-default btn-sm pull-right" href="#">See All Tasks</a>
-                              </div>
-                          </div>
-                      </section>
-                  </div>
+                     
               </div>
               <!-- row end -->
                 </section><!-- /.content -->
                 <div class="footer-main">
-                    Copyright &copy placementcell ,2017
+                    Copyright &<span style="text-color:blue;"><a href="http://www.mec.ac.in">Govt. Model Engineering College</span> ,2017
                 </div>
             </aside><!-- /.right-side -->
 
@@ -690,6 +423,8 @@
 
         <!-- Director dashboard demo (This is only for demo purposes) -->
         <script src="js/Director/dashboard.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/jquery.e-calendar.js"></script>
+        <script type="text/javascript" src="index.js"></script>
 
         <!-- Director for demo purposes -->
         <script type="text/javascript">

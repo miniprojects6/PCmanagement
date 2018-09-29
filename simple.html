@@ -255,7 +255,7 @@
                     
                     <ul class="sidebar-menu">
                         <li>
-                            <a href="index.html">
+                            <a href="index.php">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
@@ -272,7 +272,7 @@
                         </li>
 
                         <li class="active">
-                            <a href="simple.html">
+                            <a href="simple.php">
                                 <i class="fa fa-glass"></i> <span>Student Database</span>
                             </a>
                         </li>
@@ -301,49 +301,48 @@
                                 <div class="panel-body table-responsive">
                                     <div class="box-tools m-b-15">
                                         <div class="input-group">
-                                            <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
+                                            <input type="text" id="table_search" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
                                             <div class="input-group-btn">
-                                                <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                                                <button onclick="tablesearch()" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                                             </div>
                                         </div>
                                     </div>
-                                    <table class="table table-hover">
+
+                                        <table id="details_table" class="table table-hover">
                                         <tr>
-                                            <th>ID</th>
-                                            <th>User</th>
-                                            <th>Date</th>
-                                            <th>Status</th>
-                                            <th>Reason</th>
+                                            <th>NAME</th>
+                                            <th>CLASS</th>
+                                            <th>DIVISION</th>
+                                            <th>ROLLNO</th>
+                                            <th>CGPA</th>
                                         </tr>
-                                        <tr>
-                                            <td>183</td>
-                                            <td>John</td>
-                                            <td>11-7-2014</td>
-                                            <td><span class="label label-success">Approved</span></td>
-                                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>219</td>
-                                            <td>Jane</td>
-                                            <td>11-7-2014</td>
-                                            <td><span class="label label-warning">Pending</span></td>
-                                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>657</td>
-                                            <td>Amel</td>
-                                            <td>11-7-2014</td>
-                                            <td><span class="label label-primary">Approved</span></td>
-                                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>175</td>
-                                            <td>Ajay</td>
-                                            <td>11-7-2014</td>
-                                            <td><span class="label label-danger">Denied</span></td>
-                                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        </tr>
-                                    </table>
+                                        <?php 
+                                            include("php/dbconnect.php");
+
+
+                                                $query  = "SELECT * FROM student_details"; 
+                                                 $result = mysqli_query($conn, $query ) or die(mysqli_error($conn));
+
+                                                // foreach ($result as $row): 
+                                                //     $sname= $row['name'];
+                                                //     $sbranch= $row['branch'];
+                                                //     $sdiv= $row['division'];
+                                                //     $srollno= $row['rollno'];
+                                                //     $scgpa= $row['cgpa'];
+
+                                                //     echo " <tr>";
+                                                //             echo "<td>"; echo $sname; echo "</td>";
+                                                //             echo "<td>"; echo $sbranch; echo"</td>";  
+                                                //             echo "<td>"; echo $sdiv;  echo"</td>";
+                                                //             echo "<td> <span class=\"label label-success\"> ";echo $srollno; echo "</span></td>";
+                                                //             echo "<td>";echo $scgpa; echo "</td>";
+                                                //     echo "</tr>";
+
+
+                                                //    endforeach; 
+                                            ?>
+                                        </table>
+
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
                         </div>
@@ -364,5 +363,39 @@
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <!-- Director App -->
         <script src="js/Director/app.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            function tablesearch(){
+                    alert ("infunction");
+                                    
+                                        var search_value=document.getElementsByTagName('table_search').value;
+
+                                            <?php 
+                                            include("php/dbconnect.php");
+
+
+                                                $query  = "SELECT * FROM student_details WHERE name = search_value"; 
+                                                 $result = mysqli_query($conn, $query ) or die(mysqli_error($conn));
+
+                                                foreach ($result as $row): 
+                                                    $sname= $row['name'];
+                                                    $sbranch= $row['branch'];
+                                                    $sdiv= $row['division'];
+                                                    $srollno= $row['rollno'];
+                                                    $scgpa= $row['cgpa'];
+                                                    if ($sname==search_value)
+                                                    {
+                                                    echo " <tr>";
+                                                            echo "<td>"; echo $sname; echo "</td>";
+                                                            echo "<td>"; echo $sbranch; echo"</td>";  
+                                                            echo "<td>"; echo $sdiv;  echo"</td>";
+                                                            echo "<td> <span class=\"label label-success\"> ";echo $srollno; echo "</span></td>";
+                                                            echo "<td>";echo $scgpa; echo "</td>";
+                                                    echo "</tr>";
+                                                    }
+
+                                                   endforeach; 
+                                            ?>
+                                    };
+        </script>
     </body>
 </html>
